@@ -49,6 +49,7 @@ def handle(event=None, context={}):
     for app in access_rules:
         if app == slack_app:
             authorized_groups = app.get('application').get('authorized_groups')
+            logger.debug('Valid and authorized users are in groups {}'.format(authorized_groups))
             break
 
     if app == None:
