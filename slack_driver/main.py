@@ -1,6 +1,6 @@
 import json
 import utils
-import request
+import requests
 import yaml
 
 from settings import get_config
@@ -39,7 +39,7 @@ def handle(event=None, context={}):
     ##           ]
     ## }
     logger.debug('Fetching access rules.')
-    r = request.get(appsyml)
+    r = requests.get(appsyml)
     if not r.ok:
         logger.warning('Failed to fetch access rules, will not deprovision users.')
         return
